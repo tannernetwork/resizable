@@ -1,0 +1,29 @@
+{
+  "name": "jquery-resizable",
+  "version": "1.0.0",
+  "description": "jQuery plugin for resizable elements",
+  "main": "resizable.js",
+  "files": [
+    "resizable.js",
+    "resizable.css",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tannernetwork/resizable"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ],
+  "author": "Tanner (http://tanner.zone)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tannernetwork/resizable/issues"
+  },
+  "homepage": "https://github.com/tannernetwork/resizable"
+}
