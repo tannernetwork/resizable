@@ -16,6 +16,7 @@
 
         return this.each(function() {
 
+            var _this = this;
             var element = $(this);
 
             var isDragging = false;
@@ -130,6 +131,10 @@
                 };
 
                 $('html').addClass('resizable-resizing resizable-resizing-'+initial.direction);
+
+                if (typeof options.start === 'function') {
+                    options.start.apply(_this);
+                }
             });
 
             $(window).mousemove(function(e) {
@@ -153,10 +158,18 @@
                         element.height(initial.height-moveY);
                         break;
                     }
+
+                    if (typeof options.resize === 'function') {
+                        options.resize.apply(_this);
+                    }
                 }
             }).mouseup(function(e) {
                 isDragging = false;
                 $('html').removeClass('resizable-resizing resizable-resizing-'+initial.direction);
+
+                if (typeof options.stop === 'function') {
+                    options.stop.apply(_this);
+                }
             });
 
         });

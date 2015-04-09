@@ -47,3 +47,15 @@ $('#div2').resizable({
 ```
 
 By default each direction is turned on.
+
+#### `start`
+
+Event fired at the start of resize operation.
+
+#### `resize`
+
+Event fired on mouse move during resize operation.
+
+#### `stop`
+
+Event fired at the stop of resize operation.
