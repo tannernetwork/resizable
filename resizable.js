@@ -13,12 +13,11 @@
         var settings = $.extend({
             direction: ['top', 'right', 'bottom', 'left']
         }, options);
+        var current = null;
 
         return this.each(function() {
-
             var _this = this;
             var element = $(this);
-
             var isDragging = false;
             var initial = {};
             var prepareHandles = {
@@ -106,6 +105,7 @@
             }
             
             $(this).children('.resizable-l, .resizable-r, .resizable-t, .resizable-b').mousedown(function(e) {
+                current = _this;
                 var dir;
                 switch(true)
                 {
@@ -133,7 +133,7 @@
 
                 $('html').addClass('resizable-resizing resizable-resizing-'+initial.direction);
 
-                if (typeof settings.start === 'function') {
+                if (current == _this && typeof settings.start === 'function') {
                     settings.start.apply(_this);
                 }
             });
@@ -160,7 +160,7 @@
                         break;
                     }
 
-                    if (typeof settings.resize === 'function') {
+                    if (current == _this && typeof settings.resize === 'function') {
                         settings.resize.apply(_this);
                     }
                 }
@@ -168,9 +168,10 @@
                 isDragging = false;
                 $('html').removeClass('resizable-resizing resizable-resizing-'+initial.direction);
 
-                if (typeof settings.stop === 'function') {
+                if (current == _this && typeof settings.stop === 'function') {
                     settings.stop.apply(_this);
                 }
+                _current = null;
             });
 
         });
