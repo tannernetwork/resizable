@@ -2,6 +2,8 @@
 
 jQuery plugin for resizable elements.
 
+**Demo**: https://jsfiddle.net/uqv7cdjz/ (thanks @pmorch !)
+
 ## Install
 
 ```
