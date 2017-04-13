@@ -1,6 +1,6 @@
 {
   "name": "jquery-resizable",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "jQuery plugin for resizable elements",
   "main": "resizable.js",
   "files": [
