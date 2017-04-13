@@ -68,6 +68,7 @@
                     case 'h':
                     prepareHandles.right = true;
                     prepareHandles.left = true;
+                    break;
                     case 'top':
                     case 't':
                     prepareHandles.top = true;
