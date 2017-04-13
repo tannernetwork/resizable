@@ -1,8 +1,8 @@
 /*!
- * resizable 1.0.0
+ * resizable 1.0.1
  * https://github.com/tannernetwork/resizable
  *
- * Copyright 2015 Tanner (http://tanner.zone)
+ * Copyright 2015-2017 Tanner (http://tanner.zone)
  * Released under the MIT license
  */
 
@@ -132,8 +132,8 @@
 
                 $('html').addClass('resizable-resizing resizable-resizing-'+initial.direction);
 
-                if (typeof options.start === 'function') {
-                    options.start.apply(_this);
+                if (typeof settings.start === 'function') {
+                    settings.start.apply(_this);
                 }
             });
 
@@ -159,16 +159,16 @@
                         break;
                     }
 
-                    if (typeof options.resize === 'function') {
-                        options.resize.apply(_this);
+                    if (typeof settings.resize === 'function') {
+                        settings.resize.apply(_this);
                     }
                 }
             }).mouseup(function(e) {
                 isDragging = false;
                 $('html').removeClass('resizable-resizing resizable-resizing-'+initial.direction);
 
-                if (typeof options.stop === 'function') {
-                    options.stop.apply(_this);
+                if (typeof settings.stop === 'function') {
+                    settings.stop.apply(_this);
                 }
             });
 
